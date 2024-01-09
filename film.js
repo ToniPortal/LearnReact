@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-const Film = ({ titre, des, q, genre1, genre2, authorname }) => {
+const Film = ({ titre, des, q, genre1, genre2, authorname,img }) => {
     return (
         <View style={styles.container}>
             <View style={styles.box}>
@@ -8,7 +8,7 @@ const Film = ({ titre, des, q, genre1, genre2, authorname }) => {
                 <View style={styles.container}>
 
                     <View style={styles.leftBox}>
-                        <Image source={{ uri: 'https://reactjs.org/logo-og.png' }}
+                        <Image source={{ uri: img }}
                             style={styles.cover} />
                     </View>
                     <View style={styles.rightBox}>

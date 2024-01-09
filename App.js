@@ -10,6 +10,7 @@ import Film from './film';
 export default function App() {
   const [pseudo, onChangePseudo] = React.useState('');
   const [pass, onChangePass] = React.useState('');
+  const [connect,setConnect] = React.useState(false);
 
   return (
     <SafeAreaView>
@@ -22,7 +23,10 @@ export default function App() {
         />
         <Button
           title="Login"
-          onPress={() => login(pseudo, pass)}
+          onPress={async () => {
+            const le = await login(pseudo, pass)
+            setConnect(le);
+          }}
         />
       </View>
 
@@ -43,11 +47,17 @@ export default function App() {
       <View style={styles.br} />
 
 
+      {connect ? (
+        <View>
+          <Film titre="Pacman" des="un très bon film qui participe bien a l'effort général" q="2022" genre1="action" genre2="spatial" authorname="Pierre" img='https://reactjs.org/logo-og.png' />
 
-      <Film titre="Pacman" des="un très bon film qui participe bien a l'effort général" q="2022" genre1="action" genre2="spatial" authorname="Pierre" />
-
-      <Film titre="DeadPool" des="BlaBlac bla bla" q="2019" genre1="action" genre2="action" authorname="Pierre" />
-
+          <Film titre="DeadPool" des="BlaBlac bla bla" q="2019" genre1="action" genre2="action" authorname="Pierre" img='https://media1.tenor.com/m/okYJHJU_YasAAAAd/a-mimir.gif' />
+        </View>
+      ) : (
+        <View>
+          <Text>Pas connecter</Text>
+        </View>
+      )}
 
 
 

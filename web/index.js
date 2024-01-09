@@ -7,7 +7,12 @@ const express = require('express'),
     ip = (process.env.IP || process.env.ALWAYSDATA_HTTPD_IP),
     fs = require('fs');
 
+const cors = require('cors');
+
 app = express();
+
+app.use(cors());
+
 
 app.set('view engine', 'ejs');
 
@@ -35,8 +40,8 @@ let dbsql = require('./config/connectdb');
 
 dbsql.init(function (error) {
 
-    if(error){
-        console.warn("[BDD]",error);
+    if (error) {
+        console.warn("[BDD]", error);
     }
 
     const authRoute = require("./control/authRoute.js");
