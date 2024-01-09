@@ -1,0 +1,90 @@
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Image, ScrollView, FlatList } from 'react-native';
+
+export default function App() {
+  return (
+    <View>
+      <Text style={styles.br} />
+      <View style={styles.container}>
+        <View style={styles.leftBox}>
+          <Image style={styles.pp} source={require("./assets/icon.png")} />
+        </View>
+
+        <View style={styles.rightBox}>
+          <Text style={styles.h1}>Toni PASTRE</Text>
+          <Text>07 62 47 53 14</Text>
+          <Text>pastre.toni@gmail.com</Text>
+        </View>
+
+      </View>
+
+      <View style={styles.br}>
+        <Text style={styles.title}>Résumée</Text>
+
+        <Text style={styles.br}>Je viens d'obtenir mon diplôme de BTS SIO SLAM du lycée professionnel Charles Peguy à Marseille. À présent, je suis à la recherche d'une structure sérieuse qui me donnera l'opportunité d'une alternance dans le domaine du développement web. Ma curiosité et mon pragmatisme me permettent d'apporter une aide précieuse pour accompagner les équipes sur les problèmes informatiques. Je souhaite me perfectionner davantage dans le développement informatique et contribuer activement au domaine du web.</Text>
+
+      </View>
+
+      <View style={styles.br}>
+        <Text style={styles.title}>PARCOURS SCOLAIRE</Text>
+
+        <Text style={styles.soustitle}>Lycée Charles Peguy</Text>
+
+        <Text style={styles.br}>Obtention du Brevet de Technicien Supérieur Services informatiques aux organisations.</Text>
+        <Text>Apprentissage de la technique agile SCRUM.</Text>
+        <Text>Création de projet pour les présenter en oral.</Text>
+        <Text>Apprentissage de langage de programmation (js, php, mysql, java, node.js, plsql).</Text>
+
+      </View>
+
+
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  red: {
+    backgroundColor: "red"
+  },
+  pp: {
+    width: 70,
+    height: 70,
+    backgroundColor: "grey",
+    borderRadius: 100
+
+  },
+  br: {
+    marginTop: 10
+  },
+  h1: {
+    fontSize: 20,
+    fontWeight: "bold",
+    margin: 4
+  },
+  leftBox: {
+    flex: 1, // 20% de l'espace disponible
+    backgroundColor: 'lightblue',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  rightBox: {
+    flex: 4, // 80% de l'espace disponible
+    backgroundColor: 'lightgreen',
+    alignItems: 'center',
+  },
+  title: {
+    marginLeft: 10,
+    backgroundColor: "grey",
+    padding: 3
+  },
+  soustitle: {
+    marginTop: 10,
+    marginLeft: 20,
+    backgroundColor: "red",
+    padding: 3
+  }
+});
