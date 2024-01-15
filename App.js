@@ -25,6 +25,24 @@ export default function App() {
   return (
     <SafeAreaView>
       <Text>{JSON.stringify(pos)}</Text>
+
+      <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: 48.85679108910881,
+            longitude: 2.392559360270229,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}>
+          <Marker
+            coordinate={{
+              latitude: 48.85679108910881,
+              longitude: 2.392559360270229,
+            }}
+            title={'Ma position'}
+            description={'Je suis ici !'}
+          />
+
     </SafeAreaView>
   );
 }
